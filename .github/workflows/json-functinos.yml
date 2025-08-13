@@ -6,4 +6,4 @@ jobs:
         steps:
             - run: echo "${CONTEXT}"
         env:
-            CONTNEXT: ${{ toJSON(github) }}
+            CONTEXT: ${{ toJSON(github) }}

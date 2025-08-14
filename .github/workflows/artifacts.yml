@@ -1,0 +1,21 @@
+name: Artifacts
+on: push
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date > date.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upload
+          path: date.txt
+          retention-dats: 7
+  download:
+    runs-on: ubuntu-latest
+    needs: [upload]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: upload
+          path: download
+      - run: cat download/date.txt

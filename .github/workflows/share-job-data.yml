@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: generate
-        run: echo "result="Hellol" >> "${GITHUB_OUTPUT}"
+        run: echo "result=Hellol" >> "${GITHUB_OUTPUT}"
     outputs:
       result: ${{ steps.generate.outputs.result }}
   after:
